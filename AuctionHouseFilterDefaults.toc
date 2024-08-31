@@ -1,0 +1,13 @@
+﻿## Interface: 110002
+## Title: Auction House - Filter Defaults
+## Notes: Options to set the defaults of Auction House filters
+## Version: @project-version@
+## Author: Muhmiauwau
+## AddonCompartmentFunc: AuctionHouseFilterDefaults_OnAddonCompartmentClick
+## SavedVariables: AHFDDB
+## X-Curse-Project-ID: 1094249
+
+
+
+AuctionHouseFilterDefaults.lua
+AuctionHouseFilterDefaultsOptions.lua
