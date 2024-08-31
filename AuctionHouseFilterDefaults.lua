@@ -31,7 +31,6 @@ addon:RegisterEvent("PLAYER_LOGIN")
 addon:SetScript("OnEvent", function()
 	AHFDDB = AHFDDB  or AHFD.filters
 	AHFD.Options:init()
-	Settings.OpenToCategory(AHFD.OptionsID)
 end)
 
 
