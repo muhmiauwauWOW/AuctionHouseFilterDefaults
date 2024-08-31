@@ -68,7 +68,8 @@ AHFD.Options.filterGroups = {
 sort(AHFD.Options.filterGroups, function(a,b) return a.index < b.index end)
 
 function  AHFD.Options:init()
-    local category, layout = Settings.RegisterVerticalLayoutCategory(addonName)
+    local AddOnInfo = {C_AddOns.GetAddOnInfo(addonName)}
+    local category, layout = Settings.RegisterVerticalLayoutCategory(AddOnInfo[2])
     Settings.RegisterAddOnCategory(category)
     AHFD.OptionsID = category:GetID()
  
