@@ -70,7 +70,6 @@ sort(AHFD.Options.filterGroups, function(a,b) return a.index < b.index end)
 function  AHFD.Options:init()
     local AddOnInfo = {C_AddOns.GetAddOnInfo(addonName)}
     local category, layout = Settings.RegisterVerticalLayoutCategory(AddOnInfo[2])
-    Settings.RegisterAddOnCategory(category)
     AHFD.OptionsID = category:GetID()
  
     for k, entry in pairs(AHFD.Options.filterGroups) do
@@ -84,5 +83,5 @@ function  AHFD.Options:init()
         end
     end
 
-  
+    Settings.RegisterAddOnCategory(category)
 end

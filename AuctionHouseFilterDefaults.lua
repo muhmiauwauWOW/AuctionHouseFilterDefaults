@@ -17,22 +17,33 @@ AHFD.filters = {
 
 local addon1LoadedFrame = CreateFrame("Frame")
 addon1LoadedFrame:RegisterEvent("ADDON_LOADED")
-addon1LoadedFrame:SetScript("OnEvent", function(self, event, name, containsBindings)
+addon1LoadedFrame:SetScript("OnEvent", function(self, event, name)
     if name == "Blizzard_AuctionHouseUI"then
         if AUCTION_HOUSE_DEFAULT_FILTERS and AHFDDB then 
 			AUCTION_HOUSE_DEFAULT_FILTERS = AHFDDB
-        end
+			DevTool:AddData(AUCTION_HOUSE_DEFAULT_FILTERS, "AHFAUCTION_HOUSE_DEFAULT_FILTERSDB")
+      	end
     end
 end)
-
 
 local addon = CreateFrame("Frame")
 addon:RegisterEvent("PLAYER_LOGIN")
 addon:SetScript("OnEvent", function()
-	AHFDDB = AHFDDB  or AHFD.filters
+	AHFDDB = AHFDDB or AHFD.filters
+	local function hasError(tab)
+		for index, value in pairs(tab) do
+			if type(value) ~= "boolean" or type(index) ~= "number" then return true end
+		end
+		if #AHFDDB ~= #AHFD.filters then return true end
+		return false
+	end
+
+	if hasError(AHFDDB) then 
+		AHFDDB = AHFD.filters
+	end
+
 	AHFD.Options:init()
 end)
-
 
 function AuctionHouseFilterDefaults_OnAddonCompartmentClick()
 	Settings.OpenToCategory(AHFD.OptionsID)
