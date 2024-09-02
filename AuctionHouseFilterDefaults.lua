@@ -21,7 +21,6 @@ addon1LoadedFrame:SetScript("OnEvent", function(self, event, name)
     if name == "Blizzard_AuctionHouseUI"then
         if AUCTION_HOUSE_DEFAULT_FILTERS and AHFDDB then 
 			AUCTION_HOUSE_DEFAULT_FILTERS = AHFDDB
-			DevTool:AddData(AUCTION_HOUSE_DEFAULT_FILTERS, "AHFAUCTION_HOUSE_DEFAULT_FILTERSDB")
       	end
     end
 end)
