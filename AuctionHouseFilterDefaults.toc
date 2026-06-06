@@ -1,4 +1,4 @@
-﻿## Interface: 120005
+﻿## Interface: 120007
 ## Title: Auction House - Filter Defaults
 ## Notes: Options to set the defaults of Auction House filters
 ## Version: @project-version@
